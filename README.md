@@ -8,5 +8,5 @@ This project is an adventure game developed in C++ for Linux.
 - C++ compiler g++
 - Installed library ncurses
 
-# Course_code
+# Course code
 In this adventure game, the player controls a single hero who must solve puzzles and complete quests to escape from a dungeon. The game incorporates elements of logic and strategy
