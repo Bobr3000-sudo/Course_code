@@ -50,7 +50,8 @@ class Describe_management : History {
 public:
     Describe_management(History& library)
     {
-        management = "To get around, use the keys such as: left, right, straight, down and ENTER to solve questions";
+        management = "To get around, use the keys such as: left, right, straight, down and ENTER to solve questions.\n"
+        "Write the answer in one word with a small letter";
         std::cout << management;
         std::cout << std::endl;
     }
