@@ -45,8 +45,9 @@ int main() {
         }
         else
         {
-            std::cout << "Invalid name ";
+            std::cout << "Invalid name " << std::endl;
             std::cout << "Try again: ";
+            return 0;
         }
     }
 
