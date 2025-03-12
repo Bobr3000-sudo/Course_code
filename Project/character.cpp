@@ -23,6 +23,18 @@ bool age_controller(int input_age, const Character &game_character)
     }
 }
 
+bool name_controller(std::string input_name, const Character &game_character)
+{
+    if(input_name.empty())
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
 void start_game(std::string start)
 {
     start = "Game will start now";
