@@ -28,9 +28,10 @@ int main() {
     std::string input_name;
     std::cout << "Enter character`s name: " << std::endl;
     std::getline(std::cin, input_name);
-    int check = 0;
+    int check;
     while(check != input_name.size())
     {
+        check = 0;
         for(char val :input_name)
         {
             if(isalpha(val))
