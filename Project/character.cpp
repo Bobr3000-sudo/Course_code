@@ -12,7 +12,7 @@ bool age_controller(int input_age, const Character &game_character)
     {
         if(input_age == 0)
         {
-            std::cout << "Impossible 0_0, try again or enter afret" << 18 - input_age << " years";
+            std::cout << "Impossible 0_0, try again or enter after" << 18 - input_age << " years";
             return false;
         }
         else
