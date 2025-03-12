@@ -2,6 +2,7 @@
 #include "game.h"
 #include "map.h"
 #include "end.h"
+#include <cctype>
 
 int main() {
     system("clear");
@@ -12,21 +13,37 @@ int main() {
     int character_y;
 
     char map[] = "###############\n"
-"#           ! ~\n"
-"#   ###########\n"
-"#   #          \n"
-"#   #######    \n"
-"#   !     #    \n"
-"#######   #    \n"
-"      #   #    \n"
-"#######   #####\n"
-"# !       !   #\n"
-"###############\n";
+    "#           ! ~\n"
+    "#   ###########\n"
+    "#   #          \n"
+    "#   #######    \n"
+    "#   !     #    \n"
+    "#######   #    \n"
+    "      #   #    \n"
+    "#######   #####\n"
+    "# !       !   #\n"
+    "###############\n";
     char character = '@';
 
     std::string input_name;
     std::cout << "Enter character`s name: " << std::endl;
     std::getline(std::cin, input_name);
+    int check = 0;
+    while(check != input_name.size())
+    {
+        for(char val :input_name)
+        {
+            if(isalpha(val))
+            {
+                check++;
+            }
+        }
+        if(check == input_name.size())
+        {
+            break;
+        }
+    }
+
     std::ofstream out;
     out.open("Player_info.txt");
     if (out.is_open())
