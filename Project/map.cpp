@@ -15,7 +15,7 @@ char map[] = "###############\n"
 "#######   #    \n"
 "      #   #    \n"
 "#######   #####\n"
-"# !           #\n"
+"# !       !   #\n"
 "###############\n";
 char character = '@';
 
@@ -105,15 +105,15 @@ void run_map(char *map, int &character_x, int &character_y, bool& end_game)
             clear();
             mvprintw(1, 1, "You found a question! Press 'ENTER' key to see it.");
             mvprintw(2, 1, "Press 'BACKSPACE' key to go out.");
-            //mvprintw(3, 0, "%d", check);
             refresh();
             int press_key;
             press_key = getch();
+            std::string iteration = TRICKS.get_quastions()[rand() % TRICKS.get_quastions().size()];
             if (press_key == KEY_ENTER || press_key == '\n')
             {
                 clear();
                 map[check] = ' ';
-                std::string iteration = TRICKS.get_quastions()[rand() % TRICKS.get_quastions().size()];
+
                 auto it = std::find(TRICKS.get_quastions().begin(), TRICKS.get_quastions().end(), iteration);
                 int distance = std::distance(TRICKS.get_quastions().begin(), it);
                 mvprintw(0, 0, "%s", iteration.c_str());
