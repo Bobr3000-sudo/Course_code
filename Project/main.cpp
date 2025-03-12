@@ -5,7 +5,7 @@
 #include <cctype>
 
 int main() {
-    system("clear");
+    //system("clear");
     bool end_game = true;
     const int WIDTH = 15;
     const int HEIGHT = 11;
@@ -28,24 +28,11 @@ int main() {
     std::string input_name;
     std::cout << "Enter character`s name: " << std::endl;
     std::getline(std::cin, input_name);
-    int check = 0;
-    while(check != input_name.size())
+    Character game_character(input_name);
+
+    if (!name_controller(input_name, game_character))
     {
-        for(char val :input_name)
-        {
-            if(isalpha(val))
-            {
-                check++;
-            }
-        }
-        if(check == input_name.size())
-        {
-            break;
-        }
-        else
-        {
-            check = 0;
-        }
+        return 0;
     }
 
     std::ofstream out;
@@ -56,7 +43,7 @@ int main() {
     }
     out.close();
 
-    Character game_character(input_name);
+
     int input_age;
     std::cout << "Enter your age: " << std::endl;
     std::cin >> input_age;
