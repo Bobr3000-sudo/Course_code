@@ -61,7 +61,7 @@ void run_map(char *map, int &character_x, int &character_y, bool& end_game)
         }
         if(charr == KEY_RIGHT)
         {
-            if(map[check + 1] == '#' || (map[check + 1] == '~' && score < 3))
+            if(map[check + 1] == '#' || (map[check + 1] == '~' && score < 4))
             {
                 character_x = character_x;
                 character_y = character_y;
@@ -149,7 +149,7 @@ void run_map(char *map, int &character_x, int &character_y, bool& end_game)
                     score = score + 1;
                     break;
                 }
-                if(score == 3)
+                if(score == 4)
                 {
                     break;
                 }

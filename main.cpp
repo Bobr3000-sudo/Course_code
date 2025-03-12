@@ -2,9 +2,10 @@
 #include "game.h"
 #include "map.h"
 #include "end.h"
+#include <cctype>
 
 int main() {
-    system("clear");
+    //system("clear");
     bool end_game = true;
     const int WIDTH = 15;
     const int HEIGHT = 11;
@@ -20,13 +21,20 @@ int main() {
     "#######   #    \n"
     "      #   #    \n"
     "#######   #####\n"
-    "# !           #\n"
+    "# !       !   #\n"
     "###############\n";
     char character = '@';
 
     std::string input_name;
     std::cout << "Enter character`s name: " << std::endl;
     std::getline(std::cin, input_name);
+    Character game_character(input_name);
+
+    if (!name_controller(input_name, game_character))
+    {
+        return 0;
+    }
+
     std::ofstream out;
     out.open("Player_info.txt");
     if (out.is_open())
@@ -35,7 +43,7 @@ int main() {
     }
     out.close();
 
-    Character game_character(input_name);
+
     int input_age;
     std::cout << "Enter your age: " << std::endl;
     std::cin >> input_age;
