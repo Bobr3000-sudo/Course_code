@@ -43,6 +43,11 @@ int main() {
         {
             break;
         }
+        else
+        {
+            std::cout << "Invalid name ";
+            std::cout << "Try again: ";
+        }
     }
 
     std::ofstream out;
