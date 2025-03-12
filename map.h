@@ -20,7 +20,9 @@ public:
         Quastions = {
             {"What is the most common digit between 1 and 1000 inclusive ?"},
             {"Which month has 28 days? "},
-            {"6 people built a barn in 9 hours. How long would it take 12 builders to build the same barn? "}};
+            {"6 people built a barn in 9 hours. How long would it take 12 builders to build the same barn? "},
+            {"All five-digit numbers are written on the board, each digit of which is either equal to both adjacent numbers, or differs from the neighboring ones by exactly one - from one to a lesser one, and from the other to a higher one. How many numbers written on the board contain the number 5 in their notation?"}
+        };
     }
     const std::vector <std::string>& get_quastions() const{
         return Quastions;
@@ -34,7 +36,7 @@ private:
 public:
     answears_tricks()
     {
-        Answears = {{"one"}, {"all"}, {"zero"}};
+        Answears = {{"one"}, {"all"}, {"zero"}, {"eleven"}};
     }
     const std::vector<std::string>& get_answears() const{
         return Answears;

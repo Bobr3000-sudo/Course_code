@@ -66,7 +66,7 @@ int main() {
     system("clear");
 
     Describe_management managementDescribtion(library);
-    sleep(7);
+    sleep(10);
     system("clear");
 
     run_map(map, character_x, character_y, end_game);
