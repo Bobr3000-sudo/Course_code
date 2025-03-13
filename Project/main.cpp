@@ -61,19 +61,19 @@ int main() {
 
     History library;
     Describe_game gameDescribtion(library);
-    sleep(12);
+    sleep(1);
     system("clear");
 
     Describe_character Describtion(library);
-    sleep(11);
+    sleep(1);
     system("clear");
 
     Describe_challange challangeDescribtion(library);
-    sleep(6);
+    sleep(1);
     system("clear");
 
     Describe_management managementDescribtion(library);
-    sleep(10);
+    sleep(1);
     system("clear");
 
     run_map(map, character_x, character_y, end_game);

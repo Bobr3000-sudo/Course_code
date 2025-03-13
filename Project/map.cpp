@@ -123,7 +123,6 @@ void run_map(char *map, int &character_x, int &character_y, bool& end_game)
                 while (input != ANSWEARS_TRICKS.get_answears()[distance])
                 {
                     getnstr(input, sizeof(input) - 1);
-                    //printw("\nYour input: %s", input);
                     if(input != ANSWEARS_TRICKS.get_answears()[distance])
                     {
                         printw("\nAgain: ");
