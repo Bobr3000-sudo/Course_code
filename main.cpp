@@ -5,7 +5,6 @@
 #include <cctype>
 
 int main() {
-    //system("clear");
     bool end_game = true;
     const int WIDTH = 15;
     const int HEIGHT = 11;
@@ -24,13 +23,15 @@ int main() {
     "# !       !   #\n"
     "###############\n";
     char character = '@';
-    std::cout << "Enter character`s name: " << std::endl;
+    std::cout << "Enter character`s name (use only only letters): " << std::endl;
     std::string input_name;
+    bool check;
     do
     {
         std::getline(std::cin, input_name);
+        check = only_letters(input_name);
     }
-    while(!name_controller(input_name));
+    while(!name_controller(input_name) || !check);
     Character game_character(input_name);
 
     std::ofstream out;

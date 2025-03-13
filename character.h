@@ -5,6 +5,7 @@
 #include <string>
 #include <bits/stdc++.h>
 #include <unistd.h>
+#include <algorithm>
 
 class Character{
 public:
@@ -37,6 +38,7 @@ private:
 
 bool age_controller(int input_age, const Character &game_character);
 bool name_controller(std::string const &input_name);
+bool only_letters(std::string const &input_name);
 void start_game(std::string start);
 
 #endif

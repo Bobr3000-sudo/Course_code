@@ -28,6 +28,14 @@ bool name_controller(std::string const &input_name)
     return !input_name.empty();
 }
 
+bool only_letters(std::string const &input_name)
+{
+    return std::all_of(input_name.begin(), input_name.end(), [] (char const &c)
+    {
+        return std::isalpha(c);
+    });
+}
+
 void start_game(std::string start)
 {
     start = "Game will start now";
