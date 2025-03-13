@@ -2,6 +2,7 @@
 #include "game.h"
 #include "map.h"
 #include "end.h"
+
 #include <cctype>
 
 int main() {
