@@ -24,16 +24,14 @@ int main() {
     "# !       !   #\n"
     "###############\n";
     char character = '@';
-
-    std::string input_name;
     std::cout << "Enter character`s name: " << std::endl;
-    std::getline(std::cin, input_name);
-    Character game_character(input_name);
-
-    if (!name_controller(input_name, game_character))
+    std::string input_name;
+    do
     {
-        return 0;
+        std::getline(std::cin, input_name);
     }
+    while(!name_controller(input_name));
+    Character game_character(input_name);
 
     std::ofstream out;
     out.open("Player_info.txt");
@@ -42,7 +40,6 @@ int main() {
         out << input_name << std::endl;
     }
     out.close();
-
 
     int input_age;
     std::cout << "Enter your age: " << std::endl;

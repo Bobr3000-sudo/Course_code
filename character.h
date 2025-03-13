@@ -36,7 +36,7 @@ private:
 };
 
 bool age_controller(int input_age, const Character &game_character);
-bool name_controller(std::string input_name, const Character &game_character);
+bool name_controller(std::string const &input_name);
 void start_game(std::string start);
 
 #endif
