@@ -24,7 +24,8 @@ public:
             {"All five-digit numbers are written on the board, each digit of which is either equal to both adjacent numbers, or differs from the neighboring ones by exactly one - from one to a lesser one, and from the other to a higher one. How many numbers written on the board contain the number 5 in their notation?"}
         };
     }
-    const std::vector <std::string>& get_quastions() const{
+    std::vector <std::string>& get_quastions()
+    {
         return Quastions;
     }
 };
@@ -38,7 +39,8 @@ public:
     {
         Answears = {{"one"}, {"all"}, {"zero"}, {"eleven"}};
     }
-    const std::vector<std::string>& get_answears() const{
+    std::vector<std::string>& get_answears()
+    {
         return Answears;
     }
 };

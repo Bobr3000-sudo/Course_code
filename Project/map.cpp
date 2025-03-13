@@ -108,17 +108,17 @@ void run_map(char *map, int &character_x, int &character_y, bool& end_game)
             refresh();
             int press_key;
             press_key = getch();
-            std::string iteration = TRICKS.get_quastions()[rand() % TRICKS.get_quastions().size()];
+
             if (press_key == KEY_ENTER || press_key == '\n')
             {
                 clear();
                 map[check] = ' ';
-
+                std::string iteration = TRICKS.get_quastions()[rand() % TRICKS.get_quastions().size()];
                 auto it = std::find(TRICKS.get_quastions().begin(), TRICKS.get_quastions().end(), iteration);
                 int distance = std::distance(TRICKS.get_quastions().begin(), it);
                 mvprintw(0, 0, "%s", iteration.c_str());
 
-                char input[100];
+                char input[1000];
                 int count = 0;
                 while (input != ANSWEARS_TRICKS.get_answears()[distance])
                 {
@@ -128,14 +128,14 @@ void run_map(char *map, int &character_x, int &character_y, bool& end_game)
                     {
                         printw("\nAgain: ");
                     }
-                    if(count < 20)
+                    if(count < 10)
                     {
                         clear();
                         mvprintw(1, 0, "%s", iteration.c_str());
                         mvprintw(2, 0, "%s", MOTIVATION.get_motivation()[rand() % MOTIVATION.get_motivation().size()].c_str());
                         printw("\nAgain: ");
                     }
-                    else if(count >= 20)
+                    else if(count >= 10)
                     {
                         clear();
                         mvprintw(1, 0, "%s", iteration.c_str());
@@ -153,6 +153,8 @@ void run_map(char *map, int &character_x, int &character_y, bool& end_game)
                 {
                     break;
                 }
+                ANSWEARS_TRICKS.get_answears().erase(ANSWEARS_TRICKS.get_answears().begin() + distance);
+                TRICKS.get_quastions().erase(TRICKS.get_quastions().begin() + distance);
                 getch();
             }
             else if (press_key == KEY_BACKSPACE)
