@@ -12,7 +12,7 @@ bool age_controller(int input_age, const Character &game_character)
     {
         if(input_age == 0)
         {
-            std::cout << "Impossible 0_0, try again or enter after" << 18 - input_age << " years";
+            std::cout << "Impossible 0_0, try again or enter after " << 18 - input_age << " years";
             return false;
         }
         else
@@ -23,16 +23,17 @@ bool age_controller(int input_age, const Character &game_character)
     }
 }
 
-bool name_controller(std::string input_name, const Character &game_character)
+bool name_controller(std::string const &input_name)
 {
-    if(input_name.empty())
+    return !input_name.empty();
+}
+
+bool only_letters(std::string const &input_name)
+{
+    return std::all_of(input_name.begin(), input_name.end(), [] (char const &c)
     {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
+        return std::isalpha(c);
+    });
 }
 
 void start_game(std::string start)
