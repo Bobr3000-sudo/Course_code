@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ncurses.h>
 #include <string>
+#include "map.h"
 
 int main()
 {
@@ -22,12 +23,12 @@ int main()
             if(i == light)
             {
                 wattron(menuwin, A_REVERSE);
-                mvwprintw(menuwin, i + 1, 1, "%s", menu[i].c_str());
+                mvwprintw(menuwin, i + 4, 40, "%s", menu[i].c_str());
                 wattroff(menuwin, A_REVERSE);
             }
             else
             {
-                mvwprintw(menuwin, i + 1, 1, "%s", menu[i].c_str());
+                mvwprintw(menuwin, i + 4, 40, "%s", menu[i].c_str());
             }
         }
         choise = wgetch(menuwin);
@@ -52,11 +53,16 @@ int main()
             default:
                 break;
             }
-            if(choise == 10)
+            if(choise == 10 && menu[0] == "START")
             {
                 break;
-                clear();
             }
+            else if(choise == 10 && menu[1] == "EXIT")
+            {
+                end_game = false;
+                break;
+            }
+            clear();
     }
     return 0;
 }

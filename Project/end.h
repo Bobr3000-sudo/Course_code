@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
+#include "ncurses.h"
 
 void End(std::string name);
 

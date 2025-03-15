@@ -1,23 +1,38 @@
 #include "character.h"
+#include <ncurses.h>
 
 bool age_controller(int input_age, const Character &game_character)
     {
+        initscr();
+        cbreak();
+        WINDOW * startwin = newwin(10, 90, 0, 0);
+        box(startwin, 0 , 0);
+        refresh();
+        wrefresh(startwin);
     if(input_age >= 18)
     {
-        std::cout << "Welcome to the game 'Paradigma'!" << std::endl;
-        std::cout << "Your character was created, your character`s name is: " << game_character.Get_name() << std::endl;
+        mvwprintw(startwin, 1, 1, "Welcome to the game 'Paradigma'!");
+        wrefresh(startwin);
+        mvwprintw(startwin, 2, 1, "Your character was created, your character`s name is: %s", game_character.Get_name().c_str());
+        wrefresh(startwin);
+        //std::cout << "Welcome to the game 'Paradigma'!" << std::endl;
+        //std::cout << "Your character was created, your character`s name is: " << game_character.Get_name() << std::endl;
         return true;
     }
     else
     {
         if(input_age == 0)
         {
-            std::cout << "Impossible 0_0, try again or enter after " << 18 - input_age << " years";
+            mvwprintw(startwin, 1, 1, "Impossible 0_0, try again or enter after %c", 18 - input_age);
+            wrefresh(startwin);
+            //std::cout << "Impossible 0_0, try again or enter after " << 18 - input_age << " years";
             return false;
         }
         else
         {
-            std::cout << "You are too young to play in this game, try again after " << 18 - input_age << " years ;) ";
+            mvwprintw(startwin, 1, 1, "You are too young to play in this game, try again after %c", 18 - input_age);
+            wrefresh(startwin);
+            //std::cout << "You are too young to play in this game, try again after " << 18 - input_age << " years ;) ";
             return false;
         }
     }
@@ -38,6 +53,15 @@ bool only_letters(std::string const &input_name)
 
 void start_game(std::string start)
 {
+    initscr();
+    cbreak();
+    WINDOW * startwin = newwin(10, 90, 0, 0);
+    box(startwin, 0 , 0);
+    refresh();
+    wrefresh(startwin);
     start = "Game will start now";
-    std::cout << start;
+    mvwprintw(startwin, 1, 1, "%s", start.c_str());
+    wrefresh(startwin);
+
+    //std::cout << start;
 }

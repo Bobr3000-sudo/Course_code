@@ -6,6 +6,7 @@
 #include <bits/stdc++.h>
 #include <unistd.h>
 #include <algorithm>
+#include "ncurses.h"
 
 class Character{
 public:

@@ -1,15 +1,14 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include <iostream>
 #include <cstdlib>
-#include <iterator>
-#include <algorithm>
+#include <cstring>
 #include <vector>
 #include <string>
 #include <ctime>
 #include <ncurses.h>
 #include <curses.h>
+#include <algorithm>
 
 class tricks{
 private:
@@ -20,8 +19,8 @@ public:
         Quastions = {
             {"What is the most common digit between 1 and 1000 inclusive ?"},
             {"Which month has 28 days? "},
-            {"6 people built a barn in 9 hours. How long would it take 12 builders to build the same barn? "},
-            {"All five-digit numbers are written on the board, each digit of which is either equal to both adjacent numbers, or differs from the neighboring ones by exactly one - from one to a lesser one, and from the other to a higher one. How many numbers written on the board contain the number 5 in their notation?"}
+            {"If 6 people build a barn in 9 hours, how long would it take 12 people? "},
+            {"Husband, wife, brother, sister, and brother-in-law. How many people?"}
         };
     }
     std::vector <std::string>& get_quastions()
@@ -37,7 +36,7 @@ private:
 public:
     answears_tricks()
     {
-        Answears = {{"one"}, {"all"}, {"zero"}, {"eleven"}};
+        Answears = {{"one"}, {"all"}, {"zero"}, {"three"}};
     }
     std::vector<std::string>& get_answears()
     {
@@ -77,10 +76,10 @@ public:
     {
         Wrong_strong = {
             {"Are you AI?"},
-            {"The probability of guessing a random 2-letter word is approximately 0.00148 or 0.148%"},
-            {"The probability of guessing a random 3-letter word is approximately 0.0000568 or 0.00568%"},
-            {"The probability of guessing a random 4-letter word is approximately 0.00000219 or 0.000219%"},
-            {"The probability of guessing a random 5-letter word is approximately 0.0000000842 or 0.00000842%"}};
+            {"The probability of guessing a random 2-letter word is 0.00148 or 0.148%"},
+            {"The probability of guessing a random 3-letter word is 0.0000568 or 0.00568%"},
+            {"The probability of guessing a random 4-letter word is 0.00000219 or 0.000219%"},
+            {"The probability of guessing a random 5-letter word is 0.0000000842 or 0.00000842%"}};
     }
     const std::vector <std::string>& get_motivation_strong() const
     {
