@@ -76,12 +76,11 @@ public:
     motivation_strong()
     {
         Wrong_strong = {
-        {""},
-        {"Are you AI?"},
-        {"The probability of guessing a random 2-letter word is approximately 0.00148 or 0.148%"},
-        {"The probability of guessing a random 3-letter word is approximately 0.0000568 or 0.00568%"},
-        {"The probability of guessing a random 4-letter word is approximately 0.00000219 or 0.000219%"},
-        {"The probability of guessing a random 5-letter word is approximately 0.0000000842 or 0.00000842%"}};
+            {"Are you AI?"},
+            {"The probability of guessing a random 2-letter word is approximately 0.00148 or 0.148%"},
+            {"The probability of guessing a random 3-letter word is approximately 0.0000568 or 0.00568%"},
+            {"The probability of guessing a random 4-letter word is approximately 0.00000219 or 0.000219%"},
+            {"The probability of guessing a random 5-letter word is approximately 0.0000000842 or 0.00000842%"}};
     }
     const std::vector <std::string>& get_motivation_strong() const
     {
