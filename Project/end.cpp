@@ -1,15 +1,18 @@
 #include "end.h"
+#include <cstdlib>
 #include <ncurses.h>
 
 void End(std::string name)
 {
+
     initscr();
     cbreak();
+    clear();
     WINDOW * startwin = newwin(10, 90, 0, 0);
     box(startwin, 0 , 0);
     refresh();
     wrefresh(startwin);
-    mvwprintw(startwin, 0, 40, "Thank you for playing\n");
+    mvwprintw(startwin, 3, 40, "Thank you for playing ");
     wrefresh(startwin);
   //std::cout << "Thank you for playing ";
   std::ifstream in("Player_info.txt");
@@ -22,7 +25,7 @@ void End(std::string name)
         }
     }
     in.close();
-    mvwprintw(startwin, 0, 40, "\nCreator: Kostiantyn Korchuhanov");
+    mvwprintw(startwin, 5, 40, "\nCreator: Kostiantyn Korchuhanov");
     //std::cout << "\n\nCreator: Kostiantyn Korchuhanov\n";
     sleep(5);
     std::ofstream file("example.txt");
