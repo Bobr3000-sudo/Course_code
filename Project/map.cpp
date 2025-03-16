@@ -1,30 +1,20 @@
 #include "map.h"
 
-bool end_game = true;
-const int WIDTH = 15;
-const int HEIGHT = 11;
-int character_x = 12;
-int character_y = 9;
-int score = 0;
+bool end_game;
+int character_x;
+int character_y;
+char map;
 
-char map[] = "###############\n"
-"#           ! ~\n"
-"#   ###########\n"
-"#   #          \n"
-"#   #######    \n"
-"#   !     #    \n"
-"#######   #    \n"
-"      #   #    \n"
-"#######   #####\n"
-"# !       !   #\n"
-"###############\n";
-char character = '@';
 
 // int main()
 // / / void run_map(char *map, int &character_x, int &character_y, bool
 // &end_game)
 void run_map(char *map, int &character_x, int &character_y, bool &end_game)
 {
+    const int WIDTH = 15;
+    const int HEIGHT = 11;
+    int score = 0;
+    char character = '@';
     tricks TRICKS;
     answears_tricks ANSWEARS_TRICKS;
     motivation MOTIVATION;
@@ -63,8 +53,8 @@ void run_map(char *map, int &character_x, int &character_y, bool &end_game)
             for(int i = 0; i < HEIGHT; i++)
             {
                 mvwprintw(win, i + 1, 1, "%.*s", weight - 2, map + (WIDTH + 1) * i);
-
             }
+
             wrefresh(win);
             mvwprintw(win, character_y + 1, character_x + 1, "%c", character);
             wrefresh(win);

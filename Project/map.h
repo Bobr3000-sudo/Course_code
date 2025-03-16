@@ -87,6 +87,6 @@ public:
     }
 };
 
-void run_map(char *map, int &character_x, int &character_y, bool& end_game);
+void run_map(char *map, int &character_x, int &character_y, bool &end_game);
 
 #endif

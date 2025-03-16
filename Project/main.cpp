@@ -23,8 +23,8 @@ int main() {
     bool end_game = true;
     const int WIDTH = 15;
     const int HEIGHT = 11;
-    int character_x;
-    int character_y;
+    int character_x = 12;
+    int character_y = 9;
 
     char map[] = "###############\n"
     "#           ! ~\n"
@@ -56,6 +56,7 @@ int main() {
     do
     {
         wmove(enterwin, 1, 2);
+        //waddch(enterwin, ' ');
         wclrtoeol(enterwin);
         //wrefresh(enterwin);
         wgetnstr(enterwin, input_name, sizeof(input_name) - 1);
@@ -75,17 +76,25 @@ int main() {
     out.close();
 
     int input_age;
-    char input_age_converter[50];
-    wmove(startwin, 1, 1);
-    wclrtoeol(startwin);
-    wrefresh(startwin);
-    mvwprintw(startwin, 1, 1, "Enter your age: ");
-    wrefresh(startwin);
-    wmove(startwin, 2, 1);
-    wclrtoeol(startwin);
-    wrefresh(startwin);
-    wgetnstr(startwin, input_age_converter, sizeof(input_age_converter) - 1);
-    wrefresh(startwin);
+    char input_age_converter[3];
+    for(int i = 1; i < 5; i++)
+    {
+        wmove(startwin, i, 1);
+        //waddch(startwin, ' ');
+        wclrtoeol(startwin);
+        wrefresh(startwin);
+        wrefresh(enterwin);
+    }
+
+        wrefresh(enterwin);
+        wrefresh(startwin);
+        mvwprintw(startwin, 3, 39, "Enter your age: ");
+        wrefresh(startwin);
+        wmove(enterwin, 1, 2);
+        wclrtoeol(enterwin);
+        wrefresh(enterwin);
+        wgetnstr(enterwin, input_age_converter, sizeof(input_age_converter) - 1);
+        wrefresh(enterwin);
     input_age = std::stoi(input_age_converter);
     //std::cout << "Enter your age: " << std::endl;
 
@@ -97,28 +106,29 @@ int main() {
         return 0;
     }
 
+
     //std::cout << std::endl;
     std::string start;
     start_game(start);
-    system("clear");
+    //system("clear");
     //std::cout << std::endl;
 
     History library;
     Describe_game gameDescribtion(library);
     sleep(1);
-    system("clear");
+    //system("clear");
 
     Describe_character Describtion(library);
     sleep(1);
-    system("clear");
+    //system("clear");
 
     Describe_challange challangeDescribtion(library);
     sleep(1);
-    system("clear");
+    //system("clear");
 
     Describe_management managementDescribtion(library);
     sleep(1);
-    system("clear");
+    //system("clear");
     endwin();
     run_map(map, character_x, character_y, end_game);
 
