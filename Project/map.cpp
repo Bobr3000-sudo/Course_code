@@ -5,7 +5,13 @@ int character_x;
 int character_y;
 char map;
 
-
+void cleen(WINDOW * win_text)
+{
+    for(int i = 2; i < 86; i++)
+    {
+        wprintw(win_text, " ");
+    }
+}
 // int main()
 // / / void run_map(char *map, int &character_x, int &character_y, bool
 // &end_game)
@@ -42,13 +48,37 @@ void run_map(char *map, int &character_x, int &character_y, bool &end_game)
         while (end_game)
         {
             wmove(win_text, 1, 1);
+            cleen(win_text);
+            /*for(int i = 2; i < 80; i++)
+            {
+                wprintw(win_text, " ");
+            }*/
+            wmove(win_text, 2, 1);
+            cleen(win_text);
+            /*for(int i = 2; i < 80; i++)
+            {
+                wprintw(win_text, " ");
+            }*/
+            wmove(win_text, 3, 1);
+            cleen(win_text);
+            /*for(int i = 2; i < 80; i++)
+            {
+                wprintw(win_text, " ");
+            }*/
+            wmove(win_text, 4, 1);
+            cleen(win_text);
+            /*for(int i = 2; i < 80; i++)
+            {
+                wprintw(win_text, " ");
+            }*/
+            /*wmove(win_text, 1, 1);
             wclrtoeol(win_text);
             wmove(win_text, 2, 1);
             wclrtoeol(win_text);
             wmove(win_text, 3, 1);
             wclrtoeol(win_text);
             wmove(win_text, 4, 1);
-            wclrtoeol(win_text);
+            wclrtoeol(win_text);*/
             wrefresh(win_text);
             for(int i = 0; i < HEIGHT; i++)
             {
@@ -102,9 +132,22 @@ void run_map(char *map, int &character_x, int &character_y, bool &end_game)
                     map[check] = ' ';
                     std::string iteration = TRICKS.get_quastions()[rand() % TRICKS.get_quastions().size()];
                     wmove(win_text, 1, 1);
+                    cleen(win_text);
+                    /*for(int i = 2; i < 86; i++)
+                    {
+                        wprintw(win_text, " ");
+                    }*/
+                    wmove(win_text, 2, 1);
+                    cleen(win_text);
+                    /*for(int i = 2; i < 86; i++)
+                    {
+                        wprintw(win_text, " ");
+                    }*/
+                    wrefresh(win_text);
+                    /*wmove(win_text, 1, 1);
                     wclrtoeol(win_text);
                     wmove(win_text, 2, 1);
-                    wclrtoeol(win_text);
+                    wclrtoeol(win_text);*/
                     mvwprintw(win_text, 1, 1, "%s", iteration.c_str());
                     wrefresh(win_text);
                     auto it = std::find(TRICKS.get_quastions().begin(), TRICKS.get_quastions().end(), iteration);
@@ -121,13 +164,33 @@ void run_map(char *map, int &character_x, int &character_y, bool &end_game)
                         x++;
                         memset(input, 0, sizeof(input));
                         wmove(win_text, 5, 1);
-                        wclrtoeol(win_text);
+                        cleen(win_text);
+                        /*for(int i = 2; i < 86; i++)
+                        {
+                            wprintw(win_text, " ");
+                        }*/
+                        /*wmove(win_text, 5, 1);
+                        wclrtoeol(win_text);*/
+                        wmove(win_text, 5, 1);
                         wrefresh(win_text);
                         wgetnstr(win_text, input, sizeof(input) - 1);
                         wmove(win_text, 5, 1);
+                        cleen(win_text);
+                        /*for(int i = 2; i < 86; i++)
+                        {
+                            wprintw(win_text, " ");
+                        }*/
+                        wmove(win_text, 4, 1);
+                        cleen(win_text);
+                        /*for(int i = 2; i < 86; i++)
+                        {
+                            wprintw(win_text, " ");
+                        }*/
+
+                        /*wmove(win_text, 5, 1);
                         wclrtoeol(win_text);
                         wmove(win_text, 4, 1);
-                        wclrtoeol(win_text);
+                        wclrtoeol(win_text);*/
                         wrefresh(win_text);
                         if(input == ANSWEARS_TRICKS.get_answears()[distance])
                         {
@@ -140,25 +203,49 @@ void run_map(char *map, int &character_x, int &character_y, bool &end_game)
                             if(try_answear < 5)
                             {
                                 wmove(win_text, 3, 1);
-                                wclrtoeol(win_text);
+                                cleen(win_text);
+                                /*for(int i = 2; i < 86; i++)
+                                {
+                                    wprintw(win_text, " ");
+                                }*/
+                                /*wmove(win_text, 3, 1);
+                                wclrtoeol(win_text);*/
                                 mvwprintw(win_text, 3, 1, "%s", MOTIVATION.get_motivation()[rand() % MOTIVATION.get_motivation().size()].c_str());
                                 wrefresh(win_text);
                             }
                             else
                             {
                                 wmove(win_text, 3, 1);
-                                wclrtoeol(win_text);
+                                cleen(win_text);
+                                /*for(int i = 2; i < 86; i++)
+                                {
+                                    wprintw(win_text, " ");
+                                }*/
+                                /*wmove(win_text, 3, 1);
+                                wclrtoeol(win_text);*/
                                 mvwprintw(win_text, 3, 1, "%s", MOTIVATION_STRONG.get_motivation_strong()[rand() % MOTIVATION_STRONG.get_motivation_strong().size()].c_str());
                                 wrefresh(win_text);
 
                             }
-                            wmove(win_text, 5, 1);
-                            wclrtoeol(win_text);
+                            wmove(win_text, 4, 1);
+                            cleen(win_text);
+                            /*for(int i = 2; i < 86; i++)
+                            {
+                                wprintw(win_text, " ");
+                            }*/
+                            /*wmove(win_text, 5, 1);
+                            wclrtoeol(win_text);*/
                             mvwprintw(win_text, 4, 1, "Again: ");
                             wrefresh(win_text);
                             try_answear++;
                         }
                     }
+                    wmove(win_text, 3, 1);
+                    cleen(win_text);
+                    /*for(int i = 2; i < 86; i++)
+                    {
+                        wprintw(win_text, " ");
+                    }*/
                     ANSWEARS_TRICKS.get_answears().erase(ANSWEARS_TRICKS.get_answears().begin() + distance);
                     TRICKS.get_quastions().erase(TRICKS.get_quastions().begin() + distance);
                     score++;
