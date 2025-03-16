@@ -1,6 +1,24 @@
 #include "character.h"
+#include <cstdlib>
+#include <cwctype>
 #include <ncurses.h>
 #include <unistd.h>
+
+bool empty_age(std::string const &age)
+{
+    if(age.empty())
+    {
+        return false;
+    }
+    for(char val : age)
+    {
+        if(!iswdigit(val))
+        {
+            return false;
+        }
+    }
+    return true;
+}
 
 bool age_controller(int input_age, const Character &game_character)
     {
@@ -25,7 +43,7 @@ bool age_controller(int input_age, const Character &game_character)
     {
         if(input_age == 0)
         {
-            mvwprintw(startwin, 1, 1, "Impossible 0_0 %c", 18 - input_age);
+            mvwprintw(startwin, 4, 25, "Impossible 0_0");
             wrefresh(startwin);
             sleep(3);
             //std::cout << "Impossible 0_0, try again or enter after " << 18 - input_age << " years";
@@ -33,7 +51,7 @@ bool age_controller(int input_age, const Character &game_character)
         }
         else
         {
-            mvwprintw(startwin, 1, 1, "You are too young to play in this game, try again after %c", 18 - input_age);
+            mvwprintw(startwin, 4, 25, "You are too young to play in this game");
             wrefresh(startwin);
             sleep(3);
             //std::cout << "You are too young to play in this game, try again after " << 18 - input_age << " years ;) ";

@@ -104,21 +104,47 @@ int main() {
         }
         //wclrtoeol(enterwin);
         //wmove(enterwin, 1, 2);
-
+    while(true)
+    {
         wrefresh(enterwin);
         wrefresh(startwin);
         mvwprintw(startwin, 3, 39, "Enter your age: ");
         wrefresh(startwin);
-        wmove(enterwin, 1, 2);
-        for(int i = 2; i < 22; i++)
-        {
-            wprintw(enterwin, " ");
+
+            wmove(enterwin, 1, 2);
+            for(int i = 2; i < 22; i++)
+            {
+                wprintw(enterwin, " ");
+            }
+            //wclrtoeol(enterwin);
+            wmove(enterwin, 1, 2);
+            wgetnstr(enterwin, input_age_converter, sizeof(input_age_converter) - 1);
+            wrefresh(enterwin);
+            if(empty_age(input_age_converter))
+            {
+                input_age = std::stoi(input_age_converter);
+                break;
+            }
+            else
+            {
+                wrefresh(enterwin);
+                wrefresh(startwin);
+                mvwprintw(startwin, 3, 39, "Enter your age: ");
+                wrefresh(startwin);
+
+                wmove(enterwin, 1, 2);
+                for(int i = 2; i < 22; i++)
+                {
+                    wprintw(enterwin, " ");
+                }
+                //wclrtoeol(enterwin);
+                wmove(enterwin, 1, 2);
+                wgetnstr(enterwin, input_age_converter, sizeof(input_age_converter) - 1);
+                wrefresh(enterwin);
+            }
         }
-        //wclrtoeol(enterwin);
-        wmove(enterwin, 1, 2);
-        wgetnstr(enterwin, input_age_converter, sizeof(input_age_converter) - 1);
-        wrefresh(enterwin);
-        input_age = std::stoi(input_age_converter);
+
+
         //std::cout << "Enter your age: " << std::endl;
 
         //std::cin >> input_age;

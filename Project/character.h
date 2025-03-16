@@ -37,6 +37,7 @@ private:
     int age;
 };
 
+bool empty_age(std::string const &age);
 bool age_controller(int input_age, const Character &game_character);
 bool name_controller(std::string const &input_name);
 bool only_letters(std::string const &input_name);

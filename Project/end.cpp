@@ -12,7 +12,7 @@ void End(std::string name)
     box(startwin, 0 , 0);
     refresh();
     wrefresh(startwin);
-    mvwprintw(startwin, 3, 40, "Thank you for playing ");
+    mvwprintw(startwin, 3, 30, "Thank you for playing ");
     wrefresh(startwin);
   //std::cout << "Thank you for playing ";
   std::ifstream in("Player_info.txt");
@@ -25,7 +25,8 @@ void End(std::string name)
         }
     }
     in.close();
-    mvwprintw(startwin, 5, 40, "\nCreator: Kostiantyn Korchuhanov");
+    mvwprintw(startwin, 5, 30, "Creator: Kostiantyn Korchuhanov");
+    wrefresh(startwin);
     //std::cout << "\n\nCreator: Kostiantyn Korchuhanov\n";
     sleep(5);
     std::ofstream file("example.txt");
