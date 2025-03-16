@@ -35,8 +35,6 @@ bool age_controller(int input_age, const Character &game_character)
         mvwprintw(startwin, 4, 18, "Your character was created, your character`s name is: %s", game_character.Get_name().c_str());
         wrefresh(startwin);
         sleep(3);
-        //std::cout << "Welcome to the game 'Paradigma'!" << std::endl;
-        //std::cout << "Your character was created, your character`s name is: " << game_character.Get_name() << std::endl;
         return true;
     }
     else
@@ -46,7 +44,6 @@ bool age_controller(int input_age, const Character &game_character)
             mvwprintw(startwin, 4, 25, "Impossible 0_0");
             wrefresh(startwin);
             sleep(3);
-            //std::cout << "Impossible 0_0, try again or enter after " << 18 - input_age << " years";
             return false;
         }
         else
@@ -54,7 +51,6 @@ bool age_controller(int input_age, const Character &game_character)
             mvwprintw(startwin, 4, 25, "You are too young to play in this game");
             wrefresh(startwin);
             sleep(3);
-            //std::cout << "You are too young to play in this game, try again after " << 18 - input_age << " years ;) ";
             return false;
         }
     }
@@ -84,6 +80,4 @@ void start_game(std::string start)
     start = "Game will start now";
     mvwprintw(startwin, 3, 35, "%s", start.c_str());
     wrefresh(startwin);
-
-    //std::cout << start;
 }

@@ -53,10 +53,6 @@ public:
         wrefresh(startwin);
         mvwprintw(startwin, 7, 13, "%s", game_5.c_str());
         wrefresh(startwin);
-
-
-        //std::cout << game;
-        //std::cout << std::endl;
     }
 };
 
@@ -87,8 +83,6 @@ public:
         wrefresh(startwin);
         mvwprintw(startwin, 7, 15, "%s", describe_5.c_str());
         wrefresh(startwin);
-        //std::cout << describe;
-        //std::cout << std::endl;
     }
 };
 class Describe_challange : History
@@ -100,11 +94,9 @@ public:
         box(startwin, 0 , 0);
         refresh();
         wrefresh(startwin);
-        challange = "You need to solve all the riddles (3) to escape from the dungeon";
+        challange = "You need to solve all the riddles (4) to escape from the dungeon";
         mvwprintw(startwin, 4, 9, "%s", challange.c_str());
         wrefresh(startwin);
-        //std::cout << challange;
-        //std::cout << std::endl;
     }
 };
 
@@ -119,8 +111,6 @@ public:
         management = "Navigate: left, right, up, down. Write the answer in one word with a small letter";
         mvwprintw(startwin, 4, 4, "%s", management.c_str());
         wrefresh(startwin);
-        //std::cout << management;
-        //std::cout << std::endl;
     }
 };
 
