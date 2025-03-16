@@ -11,9 +11,14 @@ int main() {
     initscr();
     cbreak();
     WINDOW * startwin = newwin(10, 90, 0, 0);
-    box(startwin, 0 , 0);
+    box(startwin, 0, 0);
     refresh();
     wrefresh(startwin);
+
+    WINDOW * enterwin = newwin(3, 25, 5, 35);
+    box(enterwin, 0, 0);
+    refresh();
+    wrefresh(enterwin);
 
     bool end_game = true;
     const int WIDTH = 15;
@@ -34,9 +39,7 @@ int main() {
     "###############\n";
     char character = '@';
 
-
-
-    mvwprintw(startwin, 1, 1, "Enter character`s name (use only only letters): ");
+    mvwprintw(startwin, 3, 27, "Enter character`s name (use only letters): ");
     wrefresh(startwin);
     /*wmove(startwin, 0, 1);
     wclrtoeol(startwin);
@@ -48,12 +51,15 @@ int main() {
     wclrtoeol(startwin);
     wrefresh(startwin);*/
     //std::cout << "Enter character`s name (use only only letters): " << std::endl;
-    char input_name[50];
+    char input_name[20];
     bool check;
     do
     {
-        wgetnstr(startwin, input_name, sizeof(input_name) - 1);
-        wrefresh(startwin);
+        wmove(enterwin, 1, 2);
+        wclrtoeol(enterwin);
+        //wrefresh(enterwin);
+        wgetnstr(enterwin, input_name, sizeof(input_name) - 1);
+        wrefresh(enterwin);
         //std::getline(std::cin, input_name);
         check = only_letters(input_name);
     }
@@ -75,7 +81,7 @@ int main() {
     wrefresh(startwin);
     mvwprintw(startwin, 1, 1, "Enter your age: ");
     wrefresh(startwin);
-    wmove(startwin, 4, 1);
+    wmove(startwin, 2, 1);
     wclrtoeol(startwin);
     wrefresh(startwin);
     wgetnstr(startwin, input_age_converter, sizeof(input_age_converter) - 1);

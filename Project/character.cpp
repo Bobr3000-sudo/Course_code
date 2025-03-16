@@ -1,5 +1,6 @@
 #include "character.h"
 #include <ncurses.h>
+#include <unistd.h>
 
 bool age_controller(int input_age, const Character &game_character)
     {
@@ -15,6 +16,7 @@ bool age_controller(int input_age, const Character &game_character)
         wrefresh(startwin);
         mvwprintw(startwin, 2, 1, "Your character was created, your character`s name is: %s", game_character.Get_name().c_str());
         wrefresh(startwin);
+        sleep(3);
         //std::cout << "Welcome to the game 'Paradigma'!" << std::endl;
         //std::cout << "Your character was created, your character`s name is: " << game_character.Get_name() << std::endl;
         return true;

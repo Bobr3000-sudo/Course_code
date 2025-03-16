@@ -1,7 +1,6 @@
 #include <iostream>
 #include <ncurses.h>
 #include <string>
-#include "map.h"
 
 int main()
 {
@@ -56,10 +55,7 @@ int main()
             if(choise == 10 && menu[0] == "START")
             {
                 break;
-            }
-            else if(choise == 10 && menu[1] == "EXIT")
-            {
-                end_game = false;
+            } else if (choise == 10 && menu[1] == "EXIT") {
                 break;
             }
             clear();

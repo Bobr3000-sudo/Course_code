@@ -20,8 +20,10 @@ char map[] = "###############\n"
 "###############\n";
 char character = '@';
 
-int main()
-//void run_map(char *map, int &character_x, int &character_y, bool &end_game)
+// int main()
+// / / void run_map(char *map, int &character_x, int &character_y, bool
+// &end_game)
+void run_map(char *map, int &character_x, int &character_y, bool &end_game)
 {
     tricks TRICKS;
     answears_tricks ANSWEARS_TRICKS;
