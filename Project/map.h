@@ -36,7 +36,7 @@ private:
 public:
     answears_tricks()
     {
-        Answears = {{"one"}, {"all"}, {"zero"}, {"three"}};
+        Answears = {{"one"}, {"all"}, {"zero"}, {"four"}};
     }
     std::vector<std::string>& get_answears()
     {
