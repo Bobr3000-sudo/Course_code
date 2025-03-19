@@ -1,10 +1,9 @@
 # Course Project: Adventure Game in C++
 
 ## Description
-This project is an adventure game developed in C++ for Linux.
+This project is an adventure game developed in C++ for GNU/Linux.
 
-## Requirements
-- Linux operating system
+## Requirements for GNU/Linux
 - C++ compiler g++
 - Installed library ncurses
 
