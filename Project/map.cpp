@@ -5,8 +5,8 @@ int character_x;
 int character_y;
 char map;
 
-void cleen(WINDOW * win_text)
-{
+void cleen(WINDOW *win_text)
+    {
     for(int i = 2; i < 86; i++)
     {
         wprintw(win_text, " ");
@@ -30,16 +30,16 @@ void run_map(char *map, int &character_x, int &character_y, bool &end_game)
     int start_x = 0;
     int start_y = 0;
     int height = HEIGHT + 2;
-    int weight = WIDTH + 2;
+    int width = WIDTH + 2;
 
-    WINDOW * win = newwin(height, weight, start_x, start_y);
+    WINDOW * win = newwin(height, width, start_x, start_y);
     refresh();
     box(win, 0, 0);
 
     int start_text_y = WIDTH + 2;
     int start_text_x = 0;
 
-    WINDOW * win_text = newwin(height, weight + 70, start_text_x, start_text_y);
+    WINDOW * win_text = newwin(height, width + 70, start_text_x, start_text_y);
     refresh();
     box(win_text, 0, 0);
 
@@ -56,7 +56,7 @@ void run_map(char *map, int &character_x, int &character_y, bool &end_game)
         wrefresh(win_text);
         for(int i = 0; i < HEIGHT; i++)
         {
-            mvwprintw(win, i + 1, 1, "%.*s", weight - 2, map + (WIDTH + 1) * i);
+            mvwprintw(win, i + 1, 1, "%.*s", width - 2, map + (WIDTH + 1) * i);
         }
         wrefresh(win);
         mvwprintw(win, character_y + 1, character_x + 1, "%c", character);

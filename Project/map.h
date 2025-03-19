@@ -87,6 +87,8 @@ public:
     }
 };
 
+void cleen(WINDOW *win_text);
+void cleen_1(WINDOW *enterwin);
 void run_map(char *map, int &character_x, int &character_y, bool &end_game);
 
 #endif

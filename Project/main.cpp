@@ -3,6 +3,7 @@
 #include "map.h"
 #include "end.h"
 #include "start.h"
+#include "clear.h"
 
 #include <cctype>
 #include <cstdlib>
@@ -10,7 +11,12 @@
 #include <ncurses.h>
 #include <string>
 
-int main()
+void cleen_enterwin(WINDOW *enterwin);
+void cleen_startwin(WINDOW *startwin);
+void move_enterwin(WINDOW *enterwin);
+void my_clases();
+
+int main(int argc, char* argv[])
 {
     bool start_game_end = true;
     start(start_game_end);
@@ -53,12 +59,7 @@ int main()
         bool check;
         do
         {
-            wmove(enterwin, 1, 2);
-            for(int i = 2; i < 22; i++)
-            {
-                wprintw(enterwin, " ");
-            }
-            wmove(enterwin, 1, 2);
+            move_enterwin(enterwin);
             wgetnstr(enterwin, input_name, sizeof(input_name) - 1);
             wrefresh(enterwin);
             check = only_letters(input_name);
@@ -77,22 +78,14 @@ int main()
         int input_age;
         char input_age_converter[3];
         wmove(startwin, 3, 1);
-        for(int i = 2; i < 80; i++)
-        {
-            wprintw(startwin, " ");
-        }
+        cleen_startwin(startwin);
         while(true)
         {
             wrefresh(enterwin);
             wrefresh(startwin);
             mvwprintw(startwin, 3, 39, "Enter your age: ");
             wrefresh(startwin);
-            wmove(enterwin, 1, 2);
-            for(int i = 2; i < 22; i++)
-            {
-                wprintw(enterwin, " ");
-            }
-            wmove(enterwin, 1, 2);
+            move_enterwin(enterwin);
             wgetnstr(enterwin, input_age_converter, sizeof(input_age_converter) - 1);
             wrefresh(enterwin);
             if(empty_age(input_age_converter))
@@ -106,14 +99,14 @@ int main()
                 wrefresh(startwin);
                 mvwprintw(startwin, 3, 39, "Enter your age: ");
                 wrefresh(startwin);
-                wmove(enterwin, 1, 2);
-                for(int i = 2; i < 22; i++)
-                {
-                    wprintw(enterwin, " ");
-                }
-                wmove(enterwin, 1, 2);
+                move_enterwin(enterwin);
                 wgetnstr(enterwin, input_age_converter, sizeof(input_age_converter) - 1);
                 wrefresh(enterwin);
+                if(empty_age(input_age_converter))
+                {
+                    input_age = std::stoi(input_age_converter);
+                    break;
+                }
             }
         }
         Character_age game_character_age(input_age);
@@ -123,19 +116,7 @@ int main()
         }
         std::string start;
         start_game(start);
-
-        History library;
-        Describe_game gameDescribtion(library);
-        sleep(10);
-
-        Describe_character Describtion(library);
-        sleep(10);
-
-        Describe_challange challangeDescribtion(library);
-        sleep(5);
-
-        Describe_management managementDescribtion(library);
-        sleep(5);
+        my_clases();
         endwin();
         run_map(map, character_x, character_y, end_game);
 

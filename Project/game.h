@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include "ncurses.h"
 
-class History{
+class Story{
 public:
     std::string describe;
     std::string describe_1;
@@ -25,10 +25,10 @@ public:
     std::string management;
 };
 
-class Describe_game : History
+class Describe_game : Story
 {
 public:
-    Describe_game(History& library)
+    Describe_game(Story& library)
     {
         WINDOW * startwin = newwin(10, 90, 0, 0);
         box(startwin, 0 , 0);
@@ -56,10 +56,10 @@ public:
     }
 };
 
-class Describe_character : History
+class Describe_character : Story
 {
 public:
-    Describe_character(History& library)
+    Describe_character(Story& library)
     {
         WINDOW * startwin = newwin(10, 90, 0, 0);
         box(startwin, 0 , 0);
@@ -85,10 +85,10 @@ public:
         wrefresh(startwin);
     }
 };
-class Describe_challange : History
+class Describe_challange : Story
 {
 public:
-    Describe_challange(History& library)
+    Describe_challange(Story& library)
     {
         WINDOW * startwin = newwin(10, 90, 0, 0);
         box(startwin, 0 , 0);
@@ -100,9 +100,9 @@ public:
     }
 };
 
-class Describe_management : History {
+class Describe_management : Story {
 public:
-    Describe_management(History& library)
+    Describe_management(Story& library)
     {
         WINDOW * startwin = newwin(10, 90, 0, 0);
         box(startwin, 0 , 0);
